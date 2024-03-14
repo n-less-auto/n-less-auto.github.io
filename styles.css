@@ -1,0 +1,137 @@
+.container {
+  margin: auto;
+  position: relative;
+}
+
+header nav {
+  height: 79vw;
+  max-height: 1200px;
+}
+
+#hero-img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#pin-img {
+  width: 30px;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+
+h1 {
+  padding: 10px 0 0 10px;
+  font-size: 40px;
+  line-height: 30px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+}
+
+#reviews-section {
+  position: relative;
+  top: -45px;
+}
+
+#reviews-h2 {
+  width: 70%;
+  margin: auto;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-top: black 2px solid;
+  border-bottom: none;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+h2 img {
+  width: 80%;
+  max-width: 200px;
+}
+
+.reviews {
+  display: flex;
+  width: 90%;
+  max-width: 1160px;
+  min-width: 270px;
+  overflow-x: hidden;
+  margin: auto;
+  max-width: 290px;
+}
+
+.review {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  flex-basis: 250px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 10px 30px;
+  font-size: 18px;
+  position: relative;
+  height: fit-content;
+}
+
+.review p:first-child {
+  height: 110px;
+}
+
+.review img {
+  width: 200px;
+  margin-top: 7px;
+}
+
+.review .reviewer-name {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  text-align: right;
+}
+
+footer {
+  height: 60px;
+  background-color: darkblue;
+  color: white;
+  font-size: 24px;
+  line-height: 60px;
+}
+
+footer > div {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+}
+
+@media (min-width: 642px) {
+  .reviews {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: 964px) {
+  .reviews {
+    max-width: 870px;
+  }
+}
+
+@media (min-width: 1286px) {
+  .reviews {
+    max-width: 1160px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1440px;
+  }
+  #reviews-section {
+    position: relative;
+    top: -100px;
+  }
+}
