@@ -21,17 +21,42 @@ const reviews = [
   },
   {
     review:
+      "I just bought a suburban from this dealer today. Would highly recommend, friendly and fair!",
+    reviewer: "Josh",
+  },
+  {
+    review:
       "Super fast and easy process! Very upfront and knowledgeable seller. Would recommend to anyone needing a reliable car!!",
     reviewer: "Kaiden",
   },
   {
     review:
-      "Calli at N Less Auto LLC was very kind and helpful. She talked us through the process and the car buying experience was very fast. I would recommend buying a car from N Less to anyone! Great service.",
+      "Calli at N Less Auto LLC was very kind and helpful. She talked us through the process and the car buying experience was very fast. I would recommend buying a car from N Less to anyone!",
     reviewer: "Adriana",
   },
   {
     review:
       "Calli was amazing. She stayed after hours 2days so I could get my car! Most definitely would recommend to anyone!!!",
     reviewer: "Katie",
+  },
+  {
+    review:
+      "Really nice folks came in at an off time to help me get the car I needed",
+    reviewer: "Frederick",
+  },
+  {
+    review:
+      "I highly recommend N Less Auto LLC I bought a MDX Acura from Callie around a month ago. It drives perfect, I love it! She is really sweet & made the car buying process so easy.",
+    reviewer: "Frederick",
+  },
+  {
+    review:
+      "Great customer service, great car and overall very satisfied with purchase",
+    reviewer: "Dhestiny",
+  },
+  {
+    review:
+      "They were extremely nice and very helpful will definitely do business with them again",
+    reviewer: "Jacob",
   },
 ];
