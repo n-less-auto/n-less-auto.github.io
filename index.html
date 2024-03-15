@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>N Less Auto LLC</title>
+    <link rel="icon" type="image/x-icon" href="images/logo2.png" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -13,40 +14,117 @@
         <img id="hero-img" src="images/bg2.jpg" alt="family in car" />
         <img id="hero-img-lg" src="images/bg.jpg" alt="family in car" />
         <nav>
-          <a href="/">
-            <h1>N Less<br />Auto</h1>
+          <a class="h1-link nav-links" href="/">
+            <h1>
+              <img
+                src="images/logo0.png"
+                alt="N Less Auto LLC Logo"
+                id="h1-logo"
+              />
+            </h1>
           </a>
-          <!-- <a href="/">Vehicles</a>
-        <a href="/">Contact Us</a>
-        <a href="/">Reviews</a> -->
-          <a href="https://goo.gl/maps/d1Wu64HoCj9dGc8FA"
-            ><img id="pin-img" src="images/pin.png" alt="directions pin"
-          /></a>
+          <div class="right-nav-links">
+            <a href="#reviews-section" class="middle-nav-links nav-links"
+              >Reviews</a
+            >
+            <a href="#inventory-section" class="middle-nav-links nav-links"
+              >Vehicles</a
+            >
+            <a
+              target="_blank"
+              href="https://goo.gl/maps/d1Wu64HoCj9dGc8FA"
+              class="nav-links nav-pin-link"
+            >
+              <img id="pin-img" src="images/pin.png" alt="directions pin" />
+              <br />
+              <span class="location-text med-up-text">Liberty, SC</span>
+            </a>
+            <span></span>
+          </div>
         </nav>
         <section id="reviews-section">
           <h2 id="reviews-h2">
             <img src="images/stars.jpg" alt="4.9 stars" />
             <br />4.9/5 Average Customer Review!
           </h2>
-          <div class="reviews"></div>
+          <div class="reviews">
+            <div class="scroll-arrow scroll-arrow-left"><</div>
+            <div class="scroll-arrow scroll-arrow-right">></div>
+          </div>
         </section>
       </header>
       <main>
-        <section>Inventory</section>
+        <section id="inventory-section">
+          <h2>Inventory</h2>
+          <p>(As of 3/15 @ 11:04 AM)</p>
+          <div class="cars">
+            <div class="card car-card">
+              <div class="car-card-img">
+                <img
+                  src="https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/431763292_398465379469218_5343333991657443548_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=65ZyiMq2DMwAX-BBj9D&_nc_ht=scontent-atl3-1.xx&oh=00_AfA1LOuuGcxBQR9rglPNKD4TY9sXN_BzJrxQKARWv9_Jqg&oe=65F90453"
+                  alt="car"
+                />
+              </div>
+              <div class="car-card-text">
+                <h3>2006 Honda Civic</h3>
+                <div class="car-highlights">
+                  <p>$4600</p>
+                  <p>173k miles</p>
+                </div>
+                <ul>
+                  <li>Automatic transmission</li>
+                  <li>1.8 4cyl motor runs strong</li>
+                  <li>Cloth interior good condition</li>
+                  <li>Cold AC</li>
+                  <li>Salvage title</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
     <footer>
       <div class="container">
-        <p>email</p>
-        <p>facebook</p>
-        <p>
-          1023 N Norris Dr, Liberty, SC 29657
-          <img class="footer-img" src="images/pin.png" alt="directions pin" />
-        </p>
+        <a href="tel:+18646338588">
+          <img
+            class="footer-img footer-img-low"
+            src="images/phone.png"
+            alt="directions pin"
+          />
+          <span class="footer-text">(864) 633-8588</span>
+        </a>
+        <a href="mailto:nlessautollc@gmail.com">
+          <img src="images/mail.png" alt="email icon" class="footer-img" />
+          <span class="footer-text">nlessautollc@gmail.com</span>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.facebook.com/profile.php?id=100079172762069"
+        >
+          <img
+            src="images/fb.png"
+            alt="facebook icon"
+            class="footer-img footer-img-low"
+          />
+          <span class="footer-text">N LESS AUTO LLC</span>
+        </a>
+        <a
+          target="_blank"
+          href="http://maps.apple.com/?q=N+Less+Auto+LLC+1023+N+Norris+Dr,+Liberty,+SC+29657"
+        >
+          <img
+            class="footer-img footer-img-low"
+            src="images/pin-w.png"
+            alt="directions pin"
+          />
+          <span class="footer-text">1023 N Norris Dr, Liberty, SC</span>
+        </a>
       </div>
     </footer>
     <script src="reviews.js"></script>
+    <script src="inventory.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

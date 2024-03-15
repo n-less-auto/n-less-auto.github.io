@@ -3,6 +3,11 @@ body {
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
 }
+
+.hide {
+  display: none;
+}
+
 .container {
   margin: auto;
   position: relative;
@@ -11,6 +16,7 @@ body {
 header nav {
   height: 79vw;
   max-height: 1200px;
+  padding-right: 5px;
 }
 
 #hero-img,
@@ -23,22 +29,52 @@ header nav {
   display: none;
 }
 
-#pin-img {
-  width: 30px;
+.nav-links {
+  color: rgb(6, 62, 137);
+}
+
+.middle-nav-links {
+  line-height: 100px;
+  font-size: 200%;
+  display: none;
+}
+
+.right-nav-links {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
-  top: 5px;
-  right: 8px;
+  top: 0;
+  right: 5px;
+  width: 25%;
+  min-width: 456px;
+}
+
+#pin-img {
+  width: 70px;
+  max-width: 15%;
+  position: absolute;
+  top: 3px;
+  right: -15px;
+}
+
+.location-text {
+  display: none;
+  position: relative;
+  top: 60px;
 }
 
 h1 {
-  padding: 10px 0 0 10px;
-  font-size: 40px;
-  line-height: 30px;
+  width: 126px;
+}
+
+#h1-logo {
+  width: 126px;
 }
 
 h2 {
   text-align: center;
   font-size: 32px;
+  color: rgb(6, 62, 137);
 }
 
 #reviews-section {
@@ -47,7 +83,7 @@ h2 {
 }
 
 #reviews-h2 {
-  width: 70%;
+  width: 90%;
   margin: auto;
   border-radius: 20px;
   background-color: white;
@@ -68,26 +104,29 @@ h2 img {
   width: 90%;
   max-width: 1160px;
   min-width: 270px;
-  overflow-x: hidden;
+  overflow-x: scroll;
   margin: auto;
   max-width: 290px;
 }
 
-.review {
+.card {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+}
+
+.review {
   flex-basis: 250px;
   flex-grow: 0;
   flex-shrink: 0;
   margin: 20px;
-  border-radius: 10px;
   text-align: center;
   padding: 10px 10px 30px;
   font-size: 18px;
   position: relative;
   height: fit-content;
-  background-color: white;
   background: url(images/quote.png) center 10% no-repeat;
   background-size: 50%;
+  background-color: white;
 }
 
 .review p:first-child {
@@ -106,9 +145,101 @@ h2 img {
   text-align: right;
 }
 
+.scroll-arrow {
+  font-size: 120px;
+  display: none;
+  position: absolute;
+  z-index: 200;
+  top: 175px;
+  cursor: pointer;
+  background-color: rgba(235, 235, 235, 0.8);
+  padding-bottom: 20px;
+  width: 75px;
+}
+
+.scroll-arrow-left {
+  left: 5px;
+}
+.scroll-arrow-right {
+  right: 5px;
+}
+
+#inventory-section {
+  position: relative;
+}
+
+#inventory-section h2 {
+  padding-bottom: 5px;
+  font-size: 12vw;
+}
+
+#inventory-section > p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.car-card {
+  flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 10px;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background-color: rgb(235, 235, 235);
+}
+
+.car-card:hover {
+  flex-basis: 310px;
+  height: 310px;
+  margin: 5px 5px;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  padding: 13px;
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.car-card-text {
+  background-color: rgb(235, 235, 235);
+  position: relative;
+  transition: 0.3s;
+  top: 0;
+}
+
+.car-card:hover .car-card-text {
+  top: -130px;
+}
+
+.car-highlights {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.car-card ul {
+  list-style-type: disc;
+  margin-left: 40px;
+  padding-bottom: 20px;
+}
+
 footer {
   height: 60px;
-  background-color: darkblue;
+  background-color: rgb(6, 62, 137);
   color: white;
   font-size: 24px;
   line-height: 60px;
@@ -120,21 +251,103 @@ footer > div {
   justify-content: space-around;
 }
 
-@media (min-width: 642px) {
+.footer-img {
+  width: 30px;
+  position: relative;
+}
+
+.footer-img-low {
+  top: 6px;
+}
+
+.footer-text {
+  color: white;
+}
+
+@media (min-width: 570px) {
+  .med-up-text {
+    display: inline;
+  }
+  #pin-img {
+    right: 5px;
+  }
+  .location-text {
+    position: absolute;
+    top: 75px;
+    right: 5px;
+  }
+}
+
+@media (min-width: 680px) {
   .reviews {
     max-width: 580px;
   }
 }
 
-@media (min-width: 964px) {
+@media (min-width: 760px) {
+  #reviews-h2 {
+    width: 70%;
+  }
+  #inventory-section h2 {
+    padding-bottom: 5px;
+    font-size: 100px;
+  }
+  .middle-nav-links {
+    display: inline;
+  }
+}
+
+@media (min-width: 900px) {
+  .reviews::-webkit-scrollbar {
+    display: none;
+  }
+  .reviews {
+    scrollbar-width: none;
+  }
+  .scroll-arrow {
+    display: block;
+  }
+}
+
+@media (min-width: 990px) {
   .reviews {
     max-width: 870px;
   }
 }
+@media (max-width: 1200px) {
+  .footer-text {
+    display: none;
+  }
+}
 
-@media (min-width: 1286px) {
+@media (min-width: 1300px) {
   .reviews {
     max-width: 1160px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #hero-img-lg {
+    display: inline;
+  }
+  #hero-img {
+    display: none;
+  }
+  #reviews-section {
+    top: -220px;
+  }
+  #inventory-section {
+    top: -130px;
+  }
+}
+
+@media (min-width: 1900px) {
+  #reviews-section {
+    position: relative;
+    top: -60px;
+  }
+  #inventory-section {
+    top: -40px;
   }
 }
 
@@ -145,14 +358,5 @@ footer > div {
   #reviews-section {
     position: relative;
     top: -100px;
-  }
-}
-
-@media (min-width: 1440px) {
-  #hero-img-lg {
-    display: inline;
-  }
-  #hero-img {
-    display: none;
   }
 }
