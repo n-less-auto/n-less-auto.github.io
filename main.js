@@ -38,10 +38,10 @@ inventory.forEach((vehicle) => {
   carHighlightsDiv.classList.add("car-highlights");
 
   const priceP = document.createElement("p");
-  priceP.textContent = vehicle.price;
+  priceP.textContent = "$" + vehicle.price;
 
   const milesP = document.createElement("p");
-  milesP.textContent = vehicle.miles;
+  milesP.textContent = vehicle.miles + " miles";
 
   carHighlightsDiv.append(priceP, milesP);
 
@@ -52,7 +52,15 @@ inventory.forEach((vehicle) => {
     carFactsUl.append(carFactLi);
   });
 
-  textDiv.append(carTitle, carHighlightsDiv, carFactsUl);
+  const arrowLink = document.createElement("a");
+  arrowLink.setAttribute("href", "#");
+  arrowLink.classList.add("arrow-link");
+  const arrowImg = document.createElement("img");
+  arrowImg.setAttribute("src", "images/arrow.png");
+  arrowImg.setAttribute("alt", "arrow");
+  arrowLink.append(arrowImg);
+
+  textDiv.append(carTitle, carHighlightsDiv, carFactsUl, arrowLink);
 
   vehicleDiv.append(imageDiv, textDiv);
 

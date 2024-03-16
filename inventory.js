@@ -87,6 +87,7 @@ const inventory = [
       "Cloth interior good condition",
       "Cold AC",
       "Salvage title",
+      "1.8 4cyl motor runs strong",
     ],
     pics: [
       "https://scontent-atl3-1.xx.fbcdn.net/v/t39.30808-6/431763292_398465379469218_5343333991657443548_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=65ZyiMq2DMwAX-BBj9D&_nc_ht=scontent-atl3-1.xx&oh=00_AfA1LOuuGcxBQR9rglPNKD4TY9sXN_BzJrxQKARWv9_Jqg&oe=65F90453",
