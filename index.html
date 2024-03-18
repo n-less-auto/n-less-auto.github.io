@@ -7,6 +7,9 @@
     <link rel="icon" type="image/x-icon" href="images/logo2.png" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
   </head>
   <body>
     <div class="container">
@@ -34,11 +37,13 @@
             <a
               target="_blank"
               href="https://goo.gl/maps/d1Wu64HoCj9dGc8FA"
-              class="nav-links nav-pin-link"
+              class="nav-links last-nav-link"
             >
-              <img id="pin-img" src="images/pin.png" alt="directions pin" />
-              <br />
-              <span class="location-text med-up-text">Liberty, SC</span>
+              <img
+                id="pin-img"
+                src="images/pin.png"
+                alt="directions pin"
+              /><span class="location-text med-up-text">Liberty, SC</span>
             </a>
             <span></span>
           </div>
@@ -124,6 +129,20 @@
         </a>
       </div>
     </footer>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAp7PMFf-fJ5sjonEortQfIZUsLrOFVvlA",
+        authDomain: "nlessauto-49a5c.firebaseapp.com",
+        projectId: "nlessauto-49a5c",
+        storageBucket: "nlessauto-49a5c.appspot.com",
+        messagingSenderId: "93866685526",
+        appId: "1:93866685526:web:cf85f2cca631ea4b7a37f7",
+        measurementId: "G-PHFGQ0DN6Q",
+      };
+      const firebaseApp = firebase.initializeApp(firebaseConfig);
+      const db = firebaseApp.firestore();
+      const auth = firebaseApp.auth();
+    </script>
     <script src="reviews.js"></script>
     <script src="inventory.js"></script>
     <script src="main.js"></script>

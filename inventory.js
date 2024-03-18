@@ -1,4 +1,4 @@
-const inventory = [
+let inventory = [
   {
     name: "2006 Honda Civic",
     miles: "173k",

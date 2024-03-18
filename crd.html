@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crd</title>
+    <link rel="icon" type="image/x-icon" href="images/logo2.png" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="crdStyles.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+  </head>
+  <body>
+    <h1 style="display: none">CRD Inventory</h1>
+    <h2>Inventory</h2>
+    <button id="add-new-car">+ Add vehicle</button>
+    <div class="cars"></div>
+
+    <div class="modal-background">
+      <div class="modal">
+        <p>Are you sure you want to delete <span id="vehicle-name"></span>?</p>
+        <button id="delete-button-modal">delete</button>
+        <button id="cancel-button-modal">cancel</button>
+      </div>
+    </div>
+
+    <div class="add-vehicle-modal-background">
+      <div class="add-vehicle-modal">
+        <img src="images/x.png" class="close-add-modal" alt="close" />
+        <div id="add-vehicle-section-1">
+          <p>Paste car info text here:</p>
+          <textarea
+            name="car-info"
+            id="car-info"
+            cols="30"
+            rows="15"
+          ></textarea>
+          <div id="confirm-section">
+            <p>Name: <span class="info-span" id="name-text"></span></p>
+            <p>Miles: <span class="info-span" id="miles-text"></span></p>
+            <p>Price: <span class="info-span" id="price-text"></span></p>
+            <button id="confirm-button">Confirm</button>
+          </div>
+        </div>
+        <div id="add-vehicle-section-2">
+          <label for="fileInput">Upload Images of vehicle</label>
+          <br /><br />
+          <input
+            type="file"
+            name=""
+            id="fileInput"
+            class="inputFile"
+            onchange="getFile(event)"
+            accept="image/png, image/jpeg"
+            multiple
+          />
+          <div id="upload-images">
+            <button id="upload-images-button" onclick="uploadImage()">
+              Upload Image(s)
+            </button>
+            <div id="uploadPercentages"></div>
+            <label for="fileInput"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAp7PMFf-fJ5sjonEortQfIZUsLrOFVvlA",
+        authDomain: "nlessauto-49a5c.firebaseapp.com",
+        projectId: "nlessauto-49a5c",
+        storageBucket: "nlessauto-49a5c.appspot.com",
+        messagingSenderId: "93866685526",
+        appId: "1:93866685526:web:cf85f2cca631ea4b7a37f7",
+        measurementId: "G-PHFGQ0DN6Q",
+      };
+      const firebaseApp = firebase.initializeApp(firebaseConfig);
+      const db = firebaseApp.firestore();
+      const auth = firebaseApp.auth();
+      const storage = firebaseApp.storage();
+    </script>
+    <script src="crd.js"></script>
+  </body>
+</html>

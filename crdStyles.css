@@ -1,0 +1,255 @@
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  margin: auto;
+  position: relative;
+}
+
+header nav {
+  height: 79vw;
+  max-height: 1200px;
+  padding-right: 5px;
+}
+
+.overlay {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+#hero-img,
+#hero-img-lg {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+#hero-img-lg {
+  display: none;
+}
+
+.nav-links {
+  color: rgb(6, 62, 137);
+}
+
+.middle-nav-links {
+  line-height: 100px;
+  font-size: 200%;
+  display: none;
+}
+
+.last-nav-link {
+  line-height: 100px;
+  font-size: 200%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.right-nav-links {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 25%;
+  min-width: 500px;
+}
+
+h1 {
+  width: 126px;
+}
+
+#h1-logo {
+  width: 126px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  color: rgb(6, 62, 137);
+}
+
+.card {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+}
+
+#inventory-section {
+  position: relative;
+}
+
+#inventory-section h2 {
+  padding-bottom: 5px;
+  font-size: 12vw;
+}
+
+#inventory-section > p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.car-card {
+  flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 10px;
+  height: 300px;
+  overflow: hidden;
+  transition: 0.2s ease;
+  background-color: rgb(235, 235, 235);
+  position: relative;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  padding: 13px;
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.car-card-text {
+  background-color: rgb(235, 235, 235);
+  /* position: relative; */
+  transition: 0.3s;
+  top: 0;
+}
+
+.car-highlights {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+/* .car-card ul {
+  list-style-type: disc;
+  margin-left: 40px;
+  padding-bottom: 20px;
+  line-height: 18px;
+} */
+
+.x-close,
+.close-add-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px !important;
+  cursor: pointer;
+}
+
+.modal-background,
+.add-vehicle-modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+.modal,
+.add-vehicle-modal {
+  position: fixed;
+  left: calc(50% - 160px);
+  right: calc(50% - 160px);
+  top: 10%;
+  bottom: 10%;
+  width: 320px;
+  min-width: 320px;
+  max-width: 600px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.add-vehicle-modal {
+  text-align: left;
+}
+
+#add-vehicle-section-2,
+#add-vehicle-section-3,
+#add-vehicle-section-4,
+#upload-images,
+#confirmAllGood {
+  display: none;
+}
+
+#upload-images-button {
+  height: 40px;
+}
+
+#add-new-car,
+#confirm-button,
+#upload-images-button,
+#post {
+  background-color: green;
+  width: 100px;
+  border-radius: 10px;
+  border: white;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+#add-vehicle-section-1 p {
+  margin-bottom: 10px;
+}
+
+#confirm-section {
+  display: none;
+}
+
+.info-span {
+  font-size: 12px;
+}
+
+button {
+  margin: 20px;
+  width: 60px;
+  height: 30px;
+}
+
+.preview-img {
+  width: calc(100% - 40px);
+}
+
+.modal button:first-of-type {
+  color: white;
+  background-color: #f44336;
+}
+
+@media (min-width: 2400px) {
+  .container {
+    max-width: 2240px;
+  }
+}
