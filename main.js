@@ -105,3 +105,30 @@ reviews.forEach((review) => {
   reviewDiv.append(reviewText, reviewerName, fiveStarsImage);
   reviewsDiv.append(reviewDiv);
 });
+
+function sideScroll(element, direction, speed, distance, step) {
+  scrollAmount = 0;
+  var slideTimer = setInterval(function () {
+    if (direction == "left") {
+      element.scrollLeft -= step;
+    } else {
+      element.scrollLeft += step;
+    }
+    scrollAmount += step;
+    if (scrollAmount >= distance) {
+      window.clearInterval(slideTimer);
+    }
+  }, speed);
+}
+
+const scrollToNextReviews = (e) => {
+  if (e.target.classList.contains("scroll-arrow-right")) {
+    sideScroll(document.querySelector(".reviews"), "right", 10, 290, 10);
+  } else {
+    sideScroll(document.querySelector(".reviews"), "left", 10, 290, 10);
+  }
+};
+
+document.querySelectorAll(".scroll-arrow").forEach((arrow) => {
+  arrow.addEventListener("click", (e) => scrollToNextReviews(e));
+});

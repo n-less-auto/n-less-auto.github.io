@@ -175,6 +175,10 @@ h3 {
   background-color: rgba(40, 40, 40, 0.9);
 }
 
+.modal {
+  max-height: 200px;
+}
+
 .modal,
 .add-vehicle-modal {
   position: fixed;

@@ -58,6 +58,10 @@ header nav {
   cursor: pointer;
 }
 
+#focused-image .arrow:hover {
+  background-color: rgba(38, 38, 38, 0.95);
+}
+
 #arrow-previous {
   left: 10px;
   display: none;
@@ -89,6 +93,7 @@ header nav {
 
 #image-gallery div img {
   height: 100%;
+  cursor: pointer;
 }
 
 #image-gallery div img.active {
