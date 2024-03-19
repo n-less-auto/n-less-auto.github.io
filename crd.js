@@ -203,6 +203,7 @@ const populateInventory = () => {
       })
     )
   );
+  MakeTitlesFitOnOneLine();
 };
 //make this on add vehicle modal
 document
@@ -235,3 +236,26 @@ document
   );
 
 getAndPopulateVehicles();
+
+const MakeTitlesFitOnOneLine = () => {
+  console.log(document.querySelectorAll("h3"));
+  document.querySelectorAll("h3").forEach((h3) => {
+    const checkAndReduceFont = () => {
+      let fontSize = parseFloat(
+        window.getComputedStyle(h3, null).getPropertyValue("font-size")
+      );
+      h3.style.fontSize = fontSize - 1 + "px";
+      if (h3.offsetHeight > 46) {
+        console.log("got here");
+        checkAndReduceFont();
+      } else {
+        console.log("got here");
+
+        h3.style.height = "46px";
+      }
+    };
+    if (h3.offsetHeight > 46) {
+      checkAndReduceFont();
+    }
+  });
+};

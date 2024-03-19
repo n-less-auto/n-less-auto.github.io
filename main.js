@@ -58,7 +58,11 @@ const populateInventory = () => {
     priceP.textContent = "$" + vehicle.data.price;
 
     const milesP = document.createElement("p");
-    milesP.textContent = vehicle.data.miles + " miles";
+    milesP.textContent =
+      vehicle.data.miles.includes("miles") ||
+      vehicle.data.miles.includes("Miles")
+        ? vehicle.data.miles
+        : vehicle.data.miles + " miles";
 
     carHighlightsDiv.append(priceP, milesP);
 
