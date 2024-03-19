@@ -1,12 +1,17 @@
-let inventory;
+let inventory = [];
 const getAndPopulateVehicles = () => {
+  console.log("I Got to getAndPopulateVehicles");
+  inventory = [];
   db.collection("inventory")
     .get()
     .then((snapshot) => {
+      console.log("I Got to getAndPopulateVehicles .then");
+
       snapshot.docs.forEach((doc) => {
-        inventory = [{ id: doc.id, data: doc.data() }];
-        populateInventory();
+        console.log(doc.data());
+        inventory.push({ id: doc.id, data: doc.data() });
       });
+      populateInventory();
     });
 };
 
@@ -16,6 +21,7 @@ let carPrice;
 let carDetails;
 let carPics = [];
 const parseCarText = (e) => {
+  carPics = [];
   let infoArray = e.target.value.split("\n");
   carName = infoArray[0];
   carPrice = infoArray[infoArray.length - 1];
@@ -45,9 +51,10 @@ const postVehicle = () => {
       pics: carPics,
     })
     .then(() => {
-      populateInventory();
+      getAndPopulateVehicles();
       resetAddVehicleModal();
-    });
+    })
+    .catch((err) => window.setTimeout(() => postVehicle, 3000));
 };
 
 const resetAddVehicleModal = () => {
@@ -80,7 +87,6 @@ const getFile = (e) => {
 
 const uploadImage = async () => {
   const fileItemArray = Array.from(fileItem);
-  let numberOfFilesCompleted = 0;
   document.getElementById("uploadPercentages").innerHTML = "";
   const loadingGif = document.createElement("img");
   loadingGif.setAttribute("src", "images/loading.gif");
@@ -92,34 +98,21 @@ const uploadImage = async () => {
     percentageProgress.id = "uploadPercentage" + (i + 1);
     document.getElementById("uploadPercentages").append(percentageProgress);
   }
-  await Promise.all(
-    fileItemArray.map((photo, i) => {
-      let path = "" + carName.trim().replaceAll(" ", "-") + "/" + i;
-      let storageRef = storage.ref(path);
-      let uploadTask = storageRef.put(photo);
+  const promiseArray = [];
+  fileItemArray.map((photo, i) => {
+    let path = "" + carName.trim().replaceAll(" ", "-") + "/" + i;
+    let storageRef = storage.ref(path);
+    let uploadTask = storageRef.put(photo);
+    promiseArray.push(uploadTask.snapshot.ref.getDownloadURL());
+  });
+  try {
+    carPics = await Promise.all(promiseArray);
+  } catch (error) {
+    console.log("error", error);
+    return window.setTimeout(() => uploadImage(), 3000);
+  }
 
-      uploadTask.on("state_changed", (snapshot) => {
-        if (snapshot.bytesTransferred === snapshot.totalBytes) {
-          numberOfFilesCompleted++;
-          if (numberOfFilesCompleted === fileItemArray.length) {
-            const myFunc = () => {
-              uploadTask.snapshot.ref.getDownloadURL().then(
-                (url) => {
-                  if (i === 0) carPics.unshift(url);
-                  else carPics.push(url);
-                  postVehicle();
-                },
-                (err) => {
-                  window.setTimeout(() => myFunc(), 3000);
-                }
-              );
-            };
-            myFunc();
-          }
-        }
-      });
-    })
-  );
+  postVehicle();
 };
 
 const closeModal = () =>
@@ -160,6 +153,7 @@ const openDeleteModal = ({ id, name }) => {
 
 const populateInventory = () => {
   const inventoryDiv = document.querySelector(".cars");
+  inventoryDiv.innerHTML = "";
   inventory.forEach((vehicle) => {
     const vehicleDiv = document.createElement("div");
     vehicleDiv.classList.add("card", "car-card");
@@ -185,7 +179,7 @@ const populateInventory = () => {
     priceP.textContent = "$" + vehicle.data.price;
 
     const milesP = document.createElement("p");
-    milesP.textContent = vehicle.data.miles + " miles";
+    milesP.textContent = vehicle.data.miles;
 
     carHighlightsDiv.append(priceP, milesP);
 
@@ -194,7 +188,7 @@ const populateInventory = () => {
     xCloseImg.setAttribute("data-id", vehicle.id);
     xCloseImg.setAttribute("data-name", vehicle.data.name);
     xCloseImg.classList.add("x-close");
-
+    console.log(vehicle, vehicleDiv);
     textDiv.append(carTitle, carHighlightsDiv, xCloseImg);
 
     vehicleDiv.append(imageDiv, textDiv);

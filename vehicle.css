@@ -1,0 +1,60 @@
+h1 {
+  width: calc(100% - 136px);
+  font-size: 25px;
+  min-height: 96px;
+  color: rgb(6, 62, 137);
+  padding: 5px;
+  text-align: center;
+}
+#price-and-miles {
+  font-size: 20px;
+  color: black;
+  margin-top: 6px;
+}
+
+#nla-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 126px;
+}
+
+.h1-link {
+  position: relative;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+#rev-arrow {
+  padding-left: 15px;
+  width: 30px;
+  padding-bottom: 2px;
+}
+
+header nav {
+  height: auto;
+  padding-right: 0;
+}
+
+#images-section {
+  margin-top: 20px;
+}
+
+@media (min-width: 760px) {
+  h1 {
+    font-size: 32px;
+  }
+  #price-and-miles {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1080px) {
+  h1 {
+    width: 100%;
+    font-size: 36px;
+  }
+  #price-and-miles {
+    font-size: 28px;
+  }
+}
