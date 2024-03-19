@@ -5,8 +5,6 @@ const getAndPopulateVehicles = () => {
   db.collection("inventory")
     .get()
     .then((snapshot) => {
-      console.log("I Got to getAndPopulateVehicles .then");
-
       snapshot.docs.forEach((doc) => {
         console.log(doc.data());
         inventory.push({ id: doc.id, data: doc.data() });
@@ -259,3 +257,11 @@ const MakeTitlesFitOnOneLine = () => {
     }
   });
 };
+
+db.collection("password")
+  .get()
+  .then((snapshot) => {
+    if (snapshot.docs[0].data().password === localStorage.getItem("password"))
+      return;
+    window.location.href = "https://n-less-auto.github.io";
+  });
