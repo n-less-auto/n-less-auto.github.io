@@ -73,15 +73,7 @@ const populateInventory = () => {
       carFactsUl.append(carFactLi);
     });
 
-    const arrowLink = document.createElement("a");
-    arrowLink.setAttribute("href", "#");
-    arrowLink.classList.add("arrow-link");
-    const arrowImg = document.createElement("img");
-    arrowImg.setAttribute("src", "images/arrow.png");
-    arrowImg.setAttribute("alt", "arrow");
-    arrowLink.append(arrowImg);
-
-    textDiv.append(carTitle, carHighlightsDiv, carFactsUl, arrowLink);
+    textDiv.append(carTitle, carHighlightsDiv, carFactsUl);
 
     const carLink = document.createElement("a");
     carLink.setAttribute("href", "/vehicle?id=" + vehicle.id);

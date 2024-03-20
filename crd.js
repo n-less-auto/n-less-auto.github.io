@@ -44,7 +44,7 @@ const postVehicle = () => {
     .set({
       name: carName.trim(),
       miles: carMiles.trim(),
-      price: carPrice.replace(/[^0-9]/g, ""),
+      price: carPrice.trim(),
       details: carDetails,
       pics: carPics,
     })
@@ -174,7 +174,15 @@ const populateInventory = () => {
     carHighlightsDiv.classList.add("car-highlights");
 
     const priceP = document.createElement("p");
-    priceP.textContent = "$" + vehicle.data.price;
+    if (vehicle.data.price.includes("plus doc fee")) {
+      const updatedPrice = vehicle.data.price.replace("plus doc fee", "");
+      priceP.textContent = updatedPrice;
+      const docFeeSup = document.createElement("sup");
+      docFeeSup.textContent = "+ doc fee";
+      priceP.append(docFeeSup);
+    } else {
+      priceP.textContent = vehicle.data.price;
+    }
 
     const milesP = document.createElement("p");
     milesP.textContent = vehicle.data.miles;
