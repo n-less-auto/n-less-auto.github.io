@@ -41,11 +41,6 @@ const reviews = [
   },
   {
     review:
-      "Really nice folks came in at an off time to help me get the car I needed",
-    reviewer: "Frederick",
-  },
-  {
-    review:
       "I highly recommend N Less Auto LLC I bought a MDX Acura from Callie around a month ago. It drives perfect, I love it! She is really sweet & made the car buying process so easy.",
     reviewer: "Frederick",
   },
@@ -58,5 +53,10 @@ const reviews = [
     review:
       "They were extremely nice and very helpful will definitely do business with them again",
     reviewer: "Jacob",
+  },
+  {
+    review:
+      "Really nice folks came in at an off time to help me get the car I needed",
+    reviewer: "Frederick",
   },
 ];

@@ -125,10 +125,37 @@ function sideScroll(element, direction, speed, distance, step) {
 }
 
 const scrollToNextReviews = (e) => {
+  let scrollDistance = 290;
+  let speed = 10;
+  console.log(window.innerWidth);
+
+  if (window.innerWidth >= 1300) {
+    scrollDistance *= 4;
+    speed -= 9;
+  } else if (window.innerWidth >= 990) {
+    scrollDistance *= 3;
+    speed -= 6;
+  } else if (window.innerWidth >= 680) {
+    scrollDistance *= 2;
+    speed -= 3;
+    console.log(scrollDistance, speed);
+  }
   if (e.target.classList.contains("scroll-arrow-right")) {
-    sideScroll(document.querySelector(".reviews"), "right", 10, 290, 10);
+    sideScroll(
+      document.querySelector(".reviews"),
+      "right",
+      speed,
+      scrollDistance,
+      10
+    );
   } else {
-    sideScroll(document.querySelector(".reviews"), "left", 10, 290, 10);
+    sideScroll(
+      document.querySelector(".reviews"),
+      "left",
+      speed,
+      scrollDistance,
+      10
+    );
   }
 };
 
